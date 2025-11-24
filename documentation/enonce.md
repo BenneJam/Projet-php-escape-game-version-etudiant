@@ -380,43 +380,43 @@ Avant de rendre votre travail, vérifiez point par point :
 
 ### ✔ Structure du projet
 
-- [ ] Le dossier **/src** existe
-- [ ] Les fichiers suivants sont présents : `Enigme.php`, `Salle.php`, `BanqueEnigmes.php`, `SessionJeu.php`
-- [ ] Le fichier `escape.php` est à la racine du projet
+- [x] Le dossier **/src** existe
+- [x] Les fichiers suivants sont présents : `Enigme.php`, `Salle.php`, `BanqueEnigmes.php`, `SessionJeu.php`
+- [x] Le fichier `escape.php` est à la racine du projet
 
 ### ✔ Classe _Enigme_
 
-- [ ] Tous les attributs sont **privés**
-- [ ] Le constructeur initialise texte / réponse / indice
-- [ ] La méthode `verifierReponse()` retourne bien **true/false**
-- [ ] La réponse est normalisée (`trim`, `strtolower`)
-- [ ] Les getters sont présents
+- [x] Tous les attributs sont **privés**
+- [x] Le constructeur initialise texte / réponse / indice
+- [x] La méthode `verifierReponse()` retourne bien **true/false**
+- [x] La réponse est normalisée (`trim`, `strtolower`)
+- [x] Les getters sont présents
 
 ### ✔ Classe _Salle_
 
-- [ ] Tous les attributs sont **privés**
-- [ ] Le tableau d’énigmes contient bien des objets `Enigme`
-- [ ] La méthode `ajouterEnigme()` fonctionne
-- [ ] La méthode `getEnigme()` gère correctement un index valide
-- [ ] La méthode `getNombreEnigmes()` renvoie la bonne valeur
+- [x] Tous les attributs sont **privés**
+- [x] Le tableau d’énigmes contient bien des objets `Enigme`
+- [x] La méthode `ajouterEnigme()` fonctionne
+- [x] La méthode `getEnigme()` gère correctement un index valide
+- [x] La méthode `getNombreEnigmes()` renvoie la bonne valeur
 
 ### ✔ Classe _BanqueEnigmes_
 
-- [ ] Tous les attributs sont **privés**
-- [ ] La liste interne contient bien des objets `Enigme`
-- [ ] La méthode `ajouterEnigme()` fonctionne
-- [ ] La méthode `getEnigmesAleatoires(int $nb)` renvoie un tableau d’énigmes
-- [ ] Le tirage au sort ne dépasse jamais la taille de la banque
+- [x] Tous les attributs sont **privés**
+- [x] La liste interne contient bien des objets `Enigme`
+- [x] La méthode `ajouterEnigme()` fonctionne
+- [x] La méthode `getEnigmesAleatoires(int $nb)` renvoie un tableau d’énigmes
+- [x] Le tirage au sort ne dépasse jamais la taille de la banque
 
 ### ✔ Classe _SessionJeu_
 
-- [ ] Tous les attributs sont **privés**
-- [ ] Le constructeur reçoit un nom d’équipe + une salle
-- [ ] `getEnigmeEnCours()` renvoie bien l’énigme actuelle
-- [ ] `repondreAEnigme()` incrémente le compteur de tentatives
-- [ ] L’avancement à l’énigme suivante fonctionne
-- [ ] `estTerminee()` renvoie **true** uniquement à la fin
-- [ ] La méthode `getIndexEnigmeCourante()` existe
+- [x] Tous les attributs sont **privés**
+- [x] Le constructeur reçoit un nom d’équipe + une salle
+- [x] `getEnigmeEnCours()` renvoie bien l’énigme actuelle
+- [x] `repondreAEnigme()` incrémente le compteur de tentatives
+- [x] L’avancement à l’énigme suivante fonctionne
+- [x] `estTerminee()` renvoie **true** uniquement à la fin
+- [x] La méthode `getIndexEnigmeCourante()` existe
 
 ### ✔ Script principal `escape.php`
 

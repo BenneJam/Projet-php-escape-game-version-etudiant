@@ -7,14 +7,13 @@ class Enigme
     private string $texte;
     private string $reponseAttendue;
     private string $indice;
-    private bool $estResolue;
+    private bool $estResolue = false;
 
-    public function __construct($texte, $reponseAttendue, $indice, $estResolue = false)
+    public function __construct($texte, $reponseAttendue, $indice)
     {
         $this->texte = $texte;
         $this->reponseAttendue = $reponseAttendue;
         $this->indice = $indice;
-        $this->estResolue = $estResolue;
     }
 
     public function verifierReponse(string $reponseUtilisateur): bool

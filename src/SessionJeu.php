@@ -6,15 +6,13 @@ class SessionJeu
 {
     private string $nomEquipe;
     private Salle $salle;
-    private int $indexEnigmeCourante;
-    private int $nombreTentatives;
+    private int $indexEnigmeCourante = 0;
+    private int $nombreTentatives = 0;
 
-    public function __construct(string $nomEquipe, Salle $salle, int $indexEnigmeCourante = 0, int $nombreTentatives = 0)
+    public function __construct(string $nomEquipe, Salle $salle)
     {
         $this->nomEquipe = $nomEquipe;
         $this->salle = $salle;
-        $this->indexEnigmeCourante = $indexEnigmeCourante;
-        $this->nombreTentatives = $nombreTentatives;
     }
 
     public function getEnigmeEnCours(): ?Enigme
@@ -29,7 +27,11 @@ class SessionJeu
             throw new \Exception("Aucune énigme en cours.");
         }
         $this->nombreTentatives++;
-        return $enigme->verifierReponse($reponseUtilisateur);
+        if ($enigme->verifierReponse($reponseUtilisateur)) {
+            $this->indexEnigmeCourante++;
+            return true;
+        }
+        return false;
     }
 
     public function estTerminee(): bool
