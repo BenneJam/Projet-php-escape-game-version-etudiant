@@ -1,0 +1,16 @@
+{
+  "name": "markiewiczb/projet-php-escape-game-version-etudiant",
+  "autoload": {
+    "psr-4": {
+      "Markiewiczb\\ProjetPhpEscapeGameVersionEtudiant\\": "src/",
+      "App\\": "src/"
+    }
+  },
+  "authors": [
+    {
+      "name": "BenneJam",
+      "email": "benji.marki70@gmail.com"
+    }
+  ],
+  "require": {}
+}
