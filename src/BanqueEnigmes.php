@@ -7,21 +7,24 @@ namespace App;
  * Permet de stocker un grand nombre d'énigmes et de sélectionner aléatoirement
  * un certain nombre d'énigmes différentes.
  */
-class BanqueEnigmes {
+class BanqueEnigmes
+{
     /** @var Enigme[] */
     private array $enigmes = [];
 
     /**
      * Initialise la banque avec 50 énigmes.
      */
-    public function __construct() {
+    public function __construct()
+    {
         $this->initialiserEnigmes();
     }
 
     /**
      * Initialise le tableau avec 50 énigmes variées.
      */
-    private function initialiserEnigmes(): void {
+    private function initialiserEnigmes(): void
+    {
         $this->enigmes = [
             new Enigme("Quel est le résultat de : 3 + 5 ?", "8", "Pense à l'addition basique !"),
             new Enigme("Je commence la nuit et finis le matin. Je suis indispensable mais invisible. Qui suis-je ?", "le sommeil", "C'est une activité humaine naturelle…"),
@@ -84,14 +87,29 @@ class BanqueEnigmes {
      * @return Enigme[] Tableau d'énigmes sélectionnées
      * @throws \Exception Si le nombre demandé est supérieur au nombre d'énigmes disponibles
      */
-    public function selectionnerEnigmesAleatoires(int $nombre): array {
-        // TODO
+    public function selectionnerEnigmesAleatoires(int $nombre): array
+    {
+        if ($nombre > count($this->enigmes)) {
+            throw new \Exception("Le nombre d'énigmes demandé est supérieur au nombre d'énigmes disponibles.");
+        }
+        $clesAleatoires = array_rand($this->enigmes, $nombre);
+        $selection = [];
+        foreach ($clesAleatoires as $cle) {
+            $selection[] = $this->enigmes[$cle];
+        }
+        return $selection;
+    }
+
+    public function ajouterEnigme(Enigme $enigme): void
+    {
+        $this->enigmes[] = $enigme;
     }
 
     /**
      * Retourne le nombre total d'énigmes disponibles.
      */
-    public function getNombreEnigmes(): int {
+    public function getNombreEnigmes(): int
+    {
         return count($this->enigmes);
     }
 }
