@@ -7,6 +7,7 @@ use App\Enigme;
 use App\SessionJeu;
 use App\BanqueEnigmes;
 use App\Timer;
+use App\Score;
 
 // Petite fonction compatible Windows/Mac/Linux
 function input(string $msg): string
@@ -83,7 +84,7 @@ while (!$session->estTerminee()) {
     }
 }
 $timer->stop();
-
+$score = new Score($session->getNombreTentatives(), $timer->getDuree(), $salle->getNombreEnigmes());
 
 // ------------------------------------------------------
 // 5. Fin de session
@@ -99,7 +100,9 @@ $enigmesResolues = $salle->getNombreEnigmes();
 echo "✔ Énigmes résolues : $enigmesResolues / $enigmesResolues\n";
 echo "✔ Nombre total de tentatives : " . $session->getNombreTentatives() . "\n";
 echo "✔ Bravo, vous avez terminé la salle !\n";
-echo "⏱️ Temps total : " . $timer->getDureeFormattee() . "\n\n";
+echo "⏱️ Temps total : " . $timer->getDureeFormattee() . "\n";
+echo "Score final : " . $score->getScore() . "/100 \n";
+echo $score->getCommentaire() . "\n\n";
 
 echo "===========================================\n";
 echo "        MERCI D’AVOIR JOUÉ AVEC NOUS !\n";

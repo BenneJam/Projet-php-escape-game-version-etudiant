@@ -1,8 +1,9 @@
 # **Évolution n°2 — Ajout d’un système de score avec une classe `Score`**
 
 ## 🟦 Contexte
+
 Ajouter un système de score complet et motivant à l’Escape Game en PHP.
-Cette évolution repose sur une *classe dédiée `Score`*
+Cette évolution repose sur une _classe dédiée `Score`_
 
 ---
 
@@ -10,10 +11,10 @@ Cette évolution repose sur une *classe dédiée `Score`*
 
 Un système de score permet :
 
-* d’enrichir la motivation du joueur,
-* d’évaluer la performance en fonction du temps et du nombre de tentatives,
-* d’introduire des notions importantes : pondération, calcul, règles métier,
-* de séparer clairement la logique du score du reste du jeu (bonne pratique POO).
+- d’enrichir la motivation du joueur,
+- d’évaluer la performance en fonction du temps et du nombre de tentatives,
+- d’introduire des notions importantes : pondération, calcul, règles métier,
+- de séparer clairement la logique du score du reste du jeu (bonne pratique POO).
 
 Le score devient un véritable **indicateur de performance**.
 
@@ -25,9 +26,10 @@ La classe `Score` doit :
 
 1. récupérer les informations finales de la partie :
 
-   * durée totale (en secondes),
-   * nombre total de tentatives,
-   * nombre d’énigmes.
+   - durée totale (en secondes),
+   - nombre total de tentatives,
+   - nombre d’énigmes.
+
 2. appliquer une formule pour déterminer un score sur 100.
 3. fournir un message final personnalisé selon la performance.
 4. fournir les valeurs formatées pour l’écran de fin.
@@ -35,8 +37,6 @@ La classe `Score` doit :
 ---
 
 ## 🟥 Modèle attendu : `Score.php`
-
-
 
 ```php
 <?php
@@ -95,7 +95,6 @@ La méthode `genererCommentaire(`) applique des règles métier très simples :
 | **50 à 69**         | Moyen          | Reconnaître la réussite mais pointer l’amélioration |
 | **0 à 49**          | Faible         | Encourager, éviter la démotivation                  |
 
-
 ---
 
 ## 🟨 Fonctionnement attendu
@@ -107,9 +106,9 @@ La méthode `genererCommentaire(`) applique des règles métier très simples :
 3. `Salle` donne le nombre total d’énigmes.
 4. La classe `Score` :
 
-   * applique automatiquement une formule,
-   * produit un score sur 100,
-   * génère un message motivant.
+   - applique automatiquement une formule,
+   - produit un score sur 100,
+   - génère un message motivant.
 
 ---
 
@@ -138,11 +137,11 @@ Résultat pour l'équipe : Les Phoenix
 
 ## 🟩 7. Critères de réussite
 
-* [ ] La classe `Score` est correctement créée.
-* [ ] La méthode de calcul applique le barème donné.
-* [ ] Le score est borné entre 0 et 100.
-* [ ] Un commentaire de performance est généré.
-* [ ] Le score apparaît dans l’écran final.
-* [ ] Le code est clair et bien présenté.
+- [x] La classe `Score` est correctement créée.
+- [x] La méthode de calcul applique le barème donné.
+- [x] Le score est borné entre 0 et 100.
+- [x] Un commentaire de performance est généré.
+- [x] Le score apparaît dans l’écran final.
+- [x] Le code est clair et bien présenté.
 
 À vous de jouer ! 🚀
