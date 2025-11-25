@@ -27,4 +27,9 @@ class Salle
     {
         return count($this->enigmes);
     }
+
+    public function getNom(): string
+    {
+        return $this->nom;
+    }
 }

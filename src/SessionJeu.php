@@ -36,7 +36,7 @@ class SessionJeu
 
     public function estTerminee(): bool
     {
-        return $this->indexEnigmeCourante >= $this->salle->getNombreEnigmes();
+        return $this->indexEnigmeCourante === $this->salle->getNombreEnigmes();
     }
 
     public function getIndexEnigmeCourante(): int

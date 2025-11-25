@@ -420,22 +420,22 @@ Avant de rendre votre travail, vérifiez point par point :
 
 ### ✔ Script principal `escape.php`
 
-- [ ] Le programme demande le **nom de l’équipe**
-- [ ] Une **BanqueEnigmes** est créée et remplie dans le code
-- [ ] Un **nombre d’énigmes à utiliser** (par exemple 3) est fixé clairement dans le script
-- [ ] Les énigmes sont tirées **aléatoirement** depuis la banque et ajoutées à une `Salle`
-- [ ] La progression est affichée sous forme `Énigme X / Y` (via `afficherProgression()` ou équivalent)
-- [ ] Les réponses sont demandées au clavier
-- [ ] En cas d’erreur : un message + un **indice** s’affichent
-- [ ] En cas de succès : passage à l’énigme suivante
-- [ ] Le jeu se termine uniquement quand **toutes** les énigmes sélectionnées sont résolues
-- [ ] L’écran final affiche le nombre de tentatives + un message de félicitations
+- [x] Le programme demande le **nom de l’équipe**
+- [x] Une **BanqueEnigmes** est créée et remplie dans le code
+- [x] Un **nombre d’énigmes à utiliser** (par exemple 3) est fixé clairement dans le script
+- [x] Les énigmes sont tirées **aléatoirement** depuis la banque et ajoutées à une `Salle`
+- [x] La progression est affichée sous forme `Énigme X / Y` (via `afficherProgression()` ou équivalent)
+- [x] Les réponses sont demandées au clavier
+- [x] En cas d’erreur : un message + un **indice** s’affichent
+- [x] En cas de succès : passage à l’énigme suivante
+- [x] Le jeu se termine uniquement quand **toutes** les énigmes sélectionnées sont résolues
+- [x] L’écran final affiche le nombre de tentatives + un message de félicitations
 
 ### ✔ Qualité du code
 
-- [ ] Aucun attribut public dans toutes les classes
-- [ ] Nom des méthodes clair et cohérent
-- [ ] Indentation propre
+- [x] Aucun attribut public dans toutes les classes
+- [x] Nom des méthodes clair et cohérent
+- [x] Indentation propre
 - [ ] Commentaires utiles sans surcharge
 - [ ] Aucune variable ou méthode inutile dans le script
 
