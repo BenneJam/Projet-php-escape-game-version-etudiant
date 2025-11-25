@@ -6,6 +6,7 @@ use App\Salle;
 use App\Enigme;
 use App\SessionJeu;
 use App\BanqueEnigmes;
+use App\Timer;
 
 // Petite fonction compatible Windows/Mac/Linux
 function input(string $msg): string
@@ -48,7 +49,8 @@ echo "Salle prête avec 3 énigmes sélectionnées aléatoirement parmi " . $ban
 // ------------------------------------------------------
 // 3. Création de la session
 // ------------------------------------------------------
-
+$timer = new Timer();
+$timer->start();
 $session = new SessionJeu($nomEquipe, $salle);
 
 echo "-------------------------------------------\n";
@@ -80,6 +82,7 @@ while (!$session->estTerminee()) {
         echo "Indice : " . $session->getEnigmeEnCours()->getIndice() . "\n\n";
     }
 }
+$timer->stop();
 
 
 // ------------------------------------------------------
@@ -95,7 +98,8 @@ echo "Résultat pour l'équipe : $nomEquipe\n\n";
 $enigmesResolues = $salle->getNombreEnigmes();
 echo "✔ Énigmes résolues : $enigmesResolues / $enigmesResolues\n";
 echo "✔ Nombre total de tentatives : " . $session->getNombreTentatives() . "\n";
-echo "✔ Bravo, vous avez terminé la salle !\n\n";
+echo "✔ Bravo, vous avez terminé la salle !\n";
+echo "⏱️ Temps total : " . $timer->getDureeFormattee() . "\n\n";
 
 echo "===========================================\n";
 echo "        MERCI D’AVOIR JOUÉ AVEC NOUS !\n";

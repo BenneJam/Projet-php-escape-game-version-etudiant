@@ -14,9 +14,10 @@ Vous devez :
 1. **Créer une nouvelle classe `Timer`** jouant le rôle de chronomètre.
 2. **Modifier `escape.php`** pour intégrer ce chronomètre :
 
-   * démarrer le timer avant la boucle du jeu,
-   * l’arrêter après la dernière énigme,
-   * afficher le temps de jeu à la fin.
+   - démarrer le timer avant la boucle du jeu,
+   - l’arrêter après la dernière énigme,
+   - afficher le temps de jeu à la fin.
+
 3. Respecter l’architecture suivante :
 
    ```
@@ -28,6 +29,7 @@ Vous devez :
        Timer.php   ← NOUVEAU
    escape.php
    ```
+
 4. Afficher la durée sous un format compréhensible (`mm:ss`).
 
 ---
@@ -38,10 +40,10 @@ Vous devez :
 
 La classe `Timer` doit :
 
-* enregistrer le moment de début,
-* enregistrer le moment de fin,
-* calculer la durée totale,
-* proposer un format d’affichage propre.
+- enregistrer le moment de début,
+- enregistrer le moment de fin,
+- calculer la durée totale,
+- proposer un format d’affichage propre.
 
 ### ✔ Modèle attendu (`Timer.php`)
 
@@ -70,7 +72,7 @@ class Timer
 
     public function getDureeFormatee(): string
     {
-        // TODO 
+        // TODO
     }
 }
 ```
@@ -85,9 +87,9 @@ class Timer
 4. Le timer s’arrête.
 5. L’écran final doit afficher :
 
-   * nombre d’énigmes résolues,
-   * nombre de tentatives,
-   * **temps total du jeu**, format `mm:ss`.
+   - nombre d’énigmes résolues,
+   - nombre de tentatives,
+   - **temps total du jeu**, format `mm:ss`.
 
 ---
 
@@ -116,12 +118,12 @@ Résultat pour l'équipe : Les Phoenix
 
 ## 🟩 Critères de réussite
 
-* [ ] La classe `Timer` est correctement créée.
-* [ ] Le timer démarre **avant** le début de la session.
-* [ ] Le timer s’arrête **après** la dernière énigme.
-* [ ] Le temps total est affiché.
-* [ ] Le format d’affichage est propre (`mm:ss`).
-* [ ] Aucun code inutile.
-* [ ] Architecture respectée.
+- [x] La classe `Timer` est correctement créée.
+- [x] Le timer démarre **avant** le début de la session.
+- [x] Le timer s’arrête **après** la dernière énigme.
+- [x] Le temps total est affiché.
+- [x] Le format d’affichage est propre (`mm:ss`).
+- [x] Aucun code inutile.
+- [x] Architecture respectée.
 
 À vous de jouer ! 🚀
