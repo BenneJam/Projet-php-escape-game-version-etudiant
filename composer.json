@@ -12,5 +12,7 @@
       "email": "benji.marki70@gmail.com"
     }
   ],
-  "require": {}
+  "require": {
+    "league/climate": "^3.10"
+  }
 }

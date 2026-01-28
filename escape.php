@@ -9,6 +9,7 @@ use App\BanqueEnigmes;
 use App\Timer;
 use App\Score;
 
+$climate = new League\CLImate\CLImate();
 // Petite fonction compatible Windows/Mac/Linux
 function input(string $msg): string
 {
@@ -20,13 +21,17 @@ function input(string $msg): string
 // 1. Initialisation
 // ------------------------------------------------------
 
-echo "===========================================\n";
-echo "      ESCAPETECH - ESCAPE GAME NUMÉRIQUE\n";
-echo "===========================================\n\n";
+$climate->out("===========================================");
+$climate->out("      ESCAPETECH - ESCAPE GAME NUMÉRIQUE");
+$climate->out("===========================================\n");
 
 $nomEquipe = input("Nom de votre équipe : >> ");
 
-echo "\nCréation de la salle...\n";
+$climate->inline("\nCréation de la salle");
+for ($i = 0; $i < 3; $i++) {
+    sleep(1);
+    $climate->inline(".");
+}
 
 // ------------------------------------------------------
 // 2. Création de la salle + énigmes
@@ -44,8 +49,8 @@ $enigmesSelectionnees = $banqueEnigmes->selectionnerEnigmesAleatoires(3);
 foreach ($enigmesSelectionnees as $enigme) {
     $salle->ajouterEnigme($enigme);
 }
-
-echo "Salle prête avec 3 énigmes sélectionnées aléatoirement parmi " . $banqueEnigmes->getNombreEnigmes() . " !\n\n";
+$climate->out("\n");
+$climate->out("Salle prête avec 3 énigmes sélectionnées aléatoirement parmi " . $banqueEnigmes->getNombreEnigmes() . " !\n");
 
 // ------------------------------------------------------
 // 3. Création de la session
@@ -54,12 +59,15 @@ $timer = new Timer();
 $timer->start();
 $session = new SessionJeu($nomEquipe, $salle);
 
-echo "-------------------------------------------\n";
-echo "       Lancement de la session de jeu\n";
-echo "-------------------------------------------\n\n";
+$climate->out("-------------------------------------------");
+$climate->out("       Lancement de la session de jeu");
+$climate->out("-------------------------------------------\n");
 
-echo "Équipe : $nomEquipe\n";
-echo "Salle  : \"" . $salle->getNom() . "\"\n\n";
+$data = [
+    ["Équipe", $nomEquipe],
+    ["Salle", $salle->getNom()]
+];
+$climate->table($data);
 
 // ------------------------------------------------------
 // 4. Boucle principale du jeu
@@ -100,7 +108,7 @@ $enigmesResolues = $salle->getNombreEnigmes();
 echo "✔ Énigmes résolues : $enigmesResolues / $enigmesResolues\n";
 echo "✔ Nombre total de tentatives : " . $session->getNombreTentatives() . "\n";
 echo "✔ Bravo, vous avez terminé la salle !\n";
-echo "⏱️ Temps total : " . $timer->getDureeFormattee() . "\n";
+echo "⏱️  Temps total : " . $timer->getDureeFormattee() . "\n";
 echo "Score final : " . $score->getScore() . "/100 \n";
 echo $score->getCommentaire() . "\n\n";
 
